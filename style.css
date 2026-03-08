@@ -1,0 +1,230 @@
+:root {
+  --primary: #3A86FF;
+  --secondary: #FF8C42;
+  --bg: #f8faff;
+  --border-radius: 16px;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  font-family: 'PingFang SC','微软雅黑','Arial',sans-serif;
+  color: #222;
+}
+
+#app {
+  min-height: 100vh;
+  padding-bottom: 160px;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--border-radius);
+  padding: 1.6rem;
+  margin: 1.2rem auto;
+  max-width: 420px;
+  box-shadow: 0 6px 24px #3a86ff18;
+}
+h1, h2, h3 {
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+  color: var(--primary);
+}
+.btn {
+  width: 100%;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin: 1.2rem 0 0.5rem 0;
+  cursor: pointer;
+  box-shadow: 0 4px 14px #3a86ff18;
+  transition: background 0.2s;
+}
+.btn.secondary {
+  background: var(--secondary);
+}
+.btn:active {
+  background: #265fad;
+}
+input[type="number"], input[type="text"], input[type="tel"] {
+  font-size: 1.1rem;
+  padding: 0.7rem;
+  width: 100%;
+  border-radius: var(--border-radius);
+  border: 1px solid #e1e8ef;
+  margin: 0.4rem 0 1rem 0;
+  outline: none;
+  box-sizing: border-box;
+}
+.radio-group, .checkbox-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.radio-group label, .checkbox-group label {
+  padding: 0.3rem 1.2rem;
+  border-radius: 20px;
+  border: 1px solid #c9d6ec;
+  color: #337ecc;
+  cursor: pointer;
+  user-select: none;
+  background: #f1f7fe;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 0;
+}
+input[type="radio"]:checked + label,
+input[type="checkbox"]:checked + label {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+input[type="file"] {
+  margin: 0.7rem 0;
+}
+
+/* 问卷一题一页 */
+.question-progress {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1.2rem;
+}
+.question-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+.question-score {
+  font-size: 0.95rem;
+  color: #FF8C42;
+  margin-bottom: 1.8rem;
+}
+.question-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.question-choices .choice-btn {
+  margin: 0;
+}
+
+/* 结果报告页 */
+.result-report .result-row { margin-bottom: 0.5rem; }
+.result-report .result-section { margin: 1rem 0; }
+.result-report .result-label { font-weight: 600; color: #333; margin-bottom: 0.35rem; }
+.result-report .result-value { color: #444; line-height: 1.5; }
+.result-report .result-list { margin: 0.4rem 0 0 1rem; padding-left: 0.5rem; }
+.result-report .result-list li { margin-bottom: 0.25rem; line-height: 1.5; }
+.result-report .result-list-ol { list-style: decimal; }
+.result-report .result-tip {
+  margin-top: 1.2rem;
+  padding: 0.9rem;
+  background: #f0f7ff;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary);
+}
+.result-report .result-tip-title { font-weight: 600; color: var(--primary); margin-bottom: 0.35rem; }
+img.preview {
+  display: block;
+  width: 160px;
+  height: auto;
+  border-radius: 16px;
+  margin: 0.6rem auto;
+  box-shadow: 0 0 10px #3331;
+}
+footer {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: transparent;
+  z-index: 90;
+}
+body.result-page footer {
+  display: none;
+}
+.doctor-info {
+  box-shadow: 0 2px 18px #3a86ff15;
+  max-width: 420px;
+}
+
+.qr-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+.qr-modal.hidden { display: none; }
+.qr-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.46);
+}
+.qr-card {
+  position: relative;
+  width: min(420px, 92vw);
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.1rem 1.1rem 1rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+}
+.qr-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 0.8rem;
+}
+.qr-title {
+  font-weight: 700;
+  color: #222;
+}
+.qr-close {
+  border: none;
+  background: transparent;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem 0.45rem;
+  border-radius: 10px;
+  color: #222;
+}
+.qr-close:active { background: #f2f4f8; }
+.qr-img {
+  display: block;
+  width: 260px;
+  max-width: 72vw;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 0 10px #3331;
+}
+.qr-hint {
+  margin-top: 0.9rem;
+  font-size: 0.98rem;
+  color: #555;
+  text-align: center;
+}
+
+/* 响应式适配 */
+@media (max-width: 600px) {
+  .card, .doctor-info {
+    padding: 1.2rem 0.6rem;
+    margin: 1rem 0.2rem;
+    max-width: unset;
+  }
+  img.preview { width: 100px; }
+}
+
+/* 打印 / 生成 PDF */
+@media print {
+  footer, .qr-modal, .qr-modal * { display: none !important; }
+  #app { padding-bottom: 0; }
+  body { background: #fff; }
+  .card { box-shadow: none; border: 1px solid #e1e8ef; }
+}
