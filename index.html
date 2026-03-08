@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>儿童咬合发育自测</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app"></div>
+  <div id="qr-modal" class="qr-modal hidden" role="dialog" aria-modal="true" aria-label="医生二维码">
+    <div class="qr-backdrop" data-close="true"></div>
+    <div class="qr-card" role="document">
+      <div class="qr-header">
+        <div class="qr-title">扫码预约咨询</div>
+        <button id="qr-close" class="qr-close" type="button" aria-label="关闭">×</button>
+      </div>
+      <img class="qr-img" src="doctor-qr.png" alt="医生微信二维码" />
+      <div class="qr-hint">如无法识别，可微信搜索：jiangying267684</div>
+    </div>
+  </div>
+  <footer>
+    <div class="card doctor-info">
+      <div><b>正畸医生：</b>姜莹（微信号：jiangying267684）</div>
+      <button id="doctor-contact" class="btn secondary">预约咨询</button>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
